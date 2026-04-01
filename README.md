@@ -76,3 +76,6 @@ and interaction model are inspired by multidisciplinary artist Scott Garner, tho
 - Working, installation-ready
 - Designed for reliability and feel
 - It is a lot of fun.
+
+## License
+This project is licensed under CC BY-NC-SA 4.0.
