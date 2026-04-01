@@ -52,7 +52,7 @@ This model was inspired by a [Scott Garner](https://scottmadethis.net/) titled, 
 ## Hardware
 
 - Arduino Uno  
-- Rotary encoder  
+- Rotary encoder and wheel [I used this, push-pull, 1000PPR300mm](https://www.amazon.com/Polyurethane-Position-Measuring-Mounting-600PPR300mm/dp/B07H28H5FY/ref=sr_1_2_sspa?crid=381OCL5VTV7XB&dib=eyJ2IjoiMSJ9.JBezVbtQtsuvDk49jNP2apwkAZIRe-ceCRLaNt1KGC4TW55rmV7KS5MRlePsroqwA6RtzypKCt72QNMhl48bPbwCs8tqOAmN36Je9dyva92ahaKkJg0bnIeAx9sOaydKrYsZeRnkgv9A7-xrJfhkNLq5WmvEz1L1Mc_n-4gPsbfZcugQdnRUeId27Ur8cGrhOYuZtbsyaUcdXPcpuaC3UkaOehWNj3pThcOGSMigvFs.RjDjfHJmA0kl3KqNKgsuPxwYNhUSvxJs-41G_pyWWuo&dib_tag=se&keywords=rotary%2Bwheel%2Bencoder&qid=1775069639&sprefix=rotary%2Bwheel%2Bencode%2Caps%2C132&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1)
 - Raspberry Pi  
 - USB speakers *(recommended for transient protection)*  
 
