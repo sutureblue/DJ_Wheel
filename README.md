@@ -1,4 +1,4 @@
-# DJ_Wheel
+# DJ Wheel
 
 DJ Wheel is a hardware–software system that turns a rotary encoder into a digital record player.  
 A physical wheel controls audio playback in real time,
