@@ -1,29 +1,46 @@
+# ============================
+# DJ Wheel — Raspberry Pi Script
+# ============================
+# Replace paths and device names below with your own setup.
+
 import soundfile as sf
 import sounddevice as sd
 import numpy as np
 import threading
-import sys
 import time
 import serial
 import re
 
 # ----------------------------
-# CONFIG
+# CONFIG — EDIT THESE
 # ----------------------------
-path = "/home/mishra/Desktop/ItsYou.wav"
 
+# INSERT YOUR AUDIO FILE PATH
+path = "/home/your_username/path/to/your_audio.wav"
+
+# INSERT YOUR SERIAL PORT
+# (check with: ls /dev/ttyUSB*)
 PORT = "/dev/ttyUSB0"
+
+# Arduino baud rate (must match Arduino code)
 BAUD = 115200
 
+# ----------------------------
+# AUDIO SETTINGS
+# ----------------------------
 BLOCKSIZE = 2048
-LATENCY = "high"
+LATENCY = "high"  # "low" if you want tighter response (less stable)
 FADE_MS = 30
 
+# ----------------------------
+# RPM / PLAYBACK SETTINGS
+# ----------------------------
 RPM_AT_1X = 80.0
 RPM_MIN_REGISTER = 1.0
 RPM_DEADBAND = 1.0
 EFF_DEADBAND = max(RPM_MIN_REGISTER, RPM_DEADBAND)
 
+# Discrete playback speeds (like DJ pitch steps)
 LEVEL_RATES = [0.0, 0.125, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5]
 
 RPM_SMOOTH_ALPHA = 0.06
@@ -94,6 +111,7 @@ def callback(outdata, frame_count, time_info, status):
         ph = playhead
         fr = fade_remaining
 
+    # Smooth rate changes
     rate += 0.25 * (tr - rate)
     r = rate
 
@@ -108,6 +126,7 @@ def callback(outdata, frame_count, time_info, status):
         out = (1 - frac)[:, None] * audio[i0] + frac[:, None] * audio[i1]
         new_ph = (pos[-1] + r) % frames
 
+    # Fade on direction change
     if fr > 0:
         n = min(fr, frame_count)
         out[:n] *= np.linspace(0, 1, n)[:, None]
@@ -132,12 +151,14 @@ def serial_thread():
     rpm_initialized = False
     was_moving = False
 
+    # Connect to Arduino
     s = serial.Serial(PORT, BAUD, timeout=1)
-    time.sleep(2.0)
+    time.sleep(2.0)  # allow Arduino to reset
 
     while running:
         now = time.monotonic()
 
+        # Reset after inactivity
         if abs(target_rate) < 1e-6 and now - last_motion_time > RESET_AFTER_S:
             with lock:
                 playhead = 0.0
@@ -159,6 +180,7 @@ def serial_thread():
         if moving:
             last_motion_time = now
 
+        # Smooth RPM input
         if SNAP_ON_MOTION_START and moving and not was_moving:
             rpm_filt = rpm_raw
             rpm_initialized = True
@@ -173,6 +195,7 @@ def serial_thread():
         latest_rpm = rpm_use
         abs_rpm = abs(rpm_use)
 
+        # Determine direction
         if rpm_use > EFF_DEADBAND:
             new_dir = 1.0
         elif rpm_use < -EFF_DEADBAND:
@@ -187,6 +210,7 @@ def serial_thread():
             last_sign = sign
         direction = new_dir
 
+        # Quantize speed levels
         desired = choose_level_locked(abs_rpm, current_level)
         if moving and desired == 0:
             desired = 1
