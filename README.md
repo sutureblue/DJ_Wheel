@@ -73,6 +73,6 @@ and interaction model are inspired by multidisciplinary artist Scott Garner, tho
 
 ## Status
 
-- Working, installation-ready system  
+- Working, installation-ready
 - Designed for reliability and feel
 - It is a lot of fun.
