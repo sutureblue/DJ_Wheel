@@ -34,7 +34,7 @@ Because the animation is driven by physical rotation, the sound system had to op
 The result, as a necessity, is a DJ style wheel.
 
 The rotating pillar beneath and attached to animation sculptures is what the rotary wheel is engaged by and controls the speed.
-This model was inspired by a [Scott Garner](https://scottmadethis.net/) titled, _Musical Chair_, though this system replaces his MIDI-based stepping with direct audio playback from a continuous file.
+This model was inspired by a [Scott Garner](https://scottmadethis.net/) piece titled, _Musical Chair_, though this system replaces his MIDI-based stepping with direct audio playback from a continuous file.
 
 ---
 
