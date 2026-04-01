@@ -79,3 +79,5 @@ This model was inspired by a [Scott Garner](https://scottmadethis.net/) piece ti
 ## License## License
 This project is licensed under [CC BY-NC-SA 4.0](LICENSE).  
 See the [full license details](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+Some portions of the code were developed with AI assistance.
