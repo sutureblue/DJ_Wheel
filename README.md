@@ -1,7 +1,9 @@
 # DJ_Wheel
 
 DJ Wheel is a hardware–software system that turns a rotary encoder into a digital record player.  
-A physical wheel controls audio playback in real time (forward, backward, and at discrete speeds) using a continuous playhead model inspired by vinyl.
+A physical wheel controls audio playback in real time—forward, backward, and at discrete speeds—using a continuous playhead model inspired by vinyl.
+
+This system was developed as part of a combined **praxinoscope–zoetrope sculpture**, where intuitive, physical interaction was essential. The interface is designed to feel immediate and legible—something you understand by touch, not instruction.
 
 ---
 
@@ -27,7 +29,12 @@ A physical wheel controls audio playback in real time (forward, backward, and at
 - Most digital audio interfaces treat input as **commands**
 - This system treats input as **motion**
 
-It’s designed to feel physical, responsive, and continuous—closer to interacting with a record than pressing buttons in software.
+It was designed specifically for use within a **praxinoscope–zoetrope sculpture**, where interaction needed to be:
+- Immediate
+- Physical
+- Self-explanatory
+
+The goal was to create something that feels closer to handling a record than operating software.
 
 ---
 
