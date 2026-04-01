@@ -1,9 +1,11 @@
 # DJ_Wheel
 
 DJ Wheel is a hardware–software system that turns a rotary encoder into a digital record player.  
-A physical wheel controls audio playback in real time—forward, backward, and at discrete speeds—using a continuous playhead model inspired by vinyl.
+A physical wheel controls audio playback in real time,
+forward, backward, and at discrete speeds,
+using a continuous playhead model inspired by vinyl.
 
-This system was developed as part of a combined **praxinoscope–zoetrope sculpture**, where intuitive, physical interaction was essential. The interface is designed to feel immediate and legible—something you understand by touch, not instruction.
+It's really a simple setup if you have all the pieces.
 
 ---
 
@@ -26,15 +28,14 @@ This system was developed as part of a combined **praxinoscope–zoetrope sculpt
 
 ## Why It Exists
 
-- Most digital audio interfaces treat input as **commands**
-- This system treats input as **motion**
+This system was developed for a sculptural work combining a **praxinoscope** and **zoetrope** animation devices that require continuous rotation to function.
 
-It was designed specifically for use within a **praxinoscope–zoetrope sculpture**, where interaction needed to be:
-- Immediate
-- Physical
-- Self-explanatory
+Because the animation is driven by physical rotation, the sound system had to operate the same way.  
+The result, as a necessity, is a DJ style wheel.
 
-The goal was to create something that feels closer to handling a record than operating software.
+The rotating pillar beneath and attached to animation sculptures is what the rotary wheel is engaged by and controls the speed.
+
+and interaction model are inspired by multidisciplinary artist Scott Garner, though this system replaces his MIDI-based stepping with direct audio playback from a continuous file.
 
 ---
 
@@ -51,10 +52,10 @@ The goal was to create something that feels closer to handling a record than ope
 
 ## Hardware
 
-- Arduino Uno
-- Rotary encoder
-- Raspberry Pi
-- USB speakers *(recommended for transient protection)*
+- Arduino Uno  
+- Rotary encoder  
+- Raspberry Pi  
+- USB speakers *(recommended for transient protection)*  
 
 ---
 
@@ -65,12 +66,13 @@ The goal was to create something that feels closer to handling a record than ope
   - soundfile
   - numpy
   - pyserial
-- Serial communication between Arduino and Pi
-- systemd user service for autostart
+- Serial communication between Arduino and Pi  
+- systemd user service for autostart  
 
 ---
 
 ## Status
 
-- Working, installation-ready system
-- Designed for reliability over perfection
+- Working, installation-ready system  
+- Designed for reliability and feel
+- It is a lot of fun.
