@@ -26,7 +26,7 @@ It's really a simple setup if you have all the pieces.
 
 ---
 
-## Why It Exists
+## Purpose
 
 This system was developed for a sculptural work combining a **praxinoscope** and **zoetrope** animation devices that require continuous rotation to function.
 
